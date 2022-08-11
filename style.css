@@ -1,48 +1,63 @@
+/* ============================================== */
+ /* Author : Md. Munaim Khan
+ /* Email  : khanmail2599@gmail.com
+/* ============================================== */
+
+/*------------------------------ 
+Initial Style 
+------------------------------*/
 *{
     box-sizing: border-box;
 }
 
 body{
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-.sm_div, .language{
-    width: 100%;
-    position: absolute;
-    top: 0;
+
+/*------------------------------ 
+Sections Style 
+------------------------------*/
+.sminar, .language{
     left: 0;
     overflow: hidden;
-}
-
-.language, .sm_div img{
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: 44em;
 }
 
-.sm_div img{
+.language, .sminar img{
+    height: 44em;
+    width: 100%;
+}
+
+.sminar img{
     animation: zoomin 50s linear infinite;
 }
 
-.flag_div{
-    width: 18em;
+
+/*------------------------------ "flag" Section Style ------------------------------*/
+.flag{
     height: 12em;
-    overflow: hidden;
     margin: 1em;
+    margin-top: -43em;
+    overflow: hidden;
     position: relative;
+    width: 18em;
     z-index: 999;
 }
 
-.flag_div img{
+.flag img{
     height: 100%;
-    width: 100%;
     transform: scale(1.5);
+    width: 100%;
 }
 
 .language span{
+    animation: float 15s linear infinite;
     position: relative;
     z-index: 999;
-    animation: float 15s linear infinite;
 }
 
 span img{
@@ -51,13 +66,37 @@ span img{
 }
 
 .span_right img{
-    animation: rotateright 15s linear infinite;
+    animation: rotateright 10s linear infinite;
 }
 
 .span_left img{
-    animation: rotateleft 12s linear infinite;
+    animation: rotateleft 10s linear infinite;
 }
 
+
+/*------------------------------ 
+"title" Section Style 
+------------------------------*/
+.title{
+    animation: fadein 25s linear 1;
+    align-items: center;
+    background: radial-gradient(#000000, transparent);
+    display: flex;
+    height: 44em;
+    justify-content: center;
+    position: relative;
+    transform: scale(1);
+    z-index: 999;
+}
+
+.title img{
+    transform: scale(1.2);
+}
+
+
+/*------------------------------ 
+Keyframes Style Start 
+------------------------------*/
 @keyframes zoomin {
     0%{
         transform: scale(1);
@@ -83,8 +122,12 @@ span img{
         transform: rotate(0deg);
     }
 
+    50%{
+        transform: rotate(-60deg);
+    }
+
     100%{
-        transform: rotate(-45deg);
+        transform: rotate(60deg);
     }
 }
 
@@ -93,11 +136,74 @@ span img{
         transform: rotate(0deg);
     }
 
+    50%{
+        transform: rotate(60deg);
+    }
+
     100%{
-        transform: rotate(45deg);
+        transform: rotate(-60deg);
+    }
+}
+
+@keyframes fadein {
+    0%{
+        transform: scale(0);
+        display: none;
+        background: radial-gradient(transparent, transparent);
+    }
+
+    20%{
+        transform: scale(0);
+        display: none;
+        background: radial-gradient(transparent, transparent);
+    }
+
+    40%{
+        transform: scale(0);
+        display: none;
+        background: radial-gradient(transparent, transparent);
+    }
+
+    60%{
+        transform: scale(0);
+        display: none;
+        background: radial-gradient(transparent, transparent);
+    }
+
+    80%{
+        transform: scale(0);
+        display: none;
+        background: radial-gradient(#000000, transparent);
+    }
+
+    100%{
+        transform: scale(1);
+        display: flex;
+        background: radial-gradient(#000000, transparent);
     }
 }
 
 
 
+/*====================================================================
+Responsive Design
+======================================================================*/
 
+/*------------------------------ 
+For Small Screen 
+------------------------------*/
+@media only screen and (max-width: 700px){
+    .flag{
+        height: 6em;
+        width: 12em;
+    }
+
+    span img {
+        height: 2em;
+        width: 2em;
+    }
+
+    .title img{
+        transform: scale(.7);
+    }
+}
