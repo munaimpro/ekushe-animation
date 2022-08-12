@@ -146,25 +146,7 @@ Keyframes Style Start
 }
 
 @keyframes fadein {
-    0%{
-        transform: scale(0);
-        display: none;
-        background: radial-gradient(transparent, transparent);
-    }
-
-    20%{
-        transform: scale(0);
-        display: none;
-        background: radial-gradient(transparent, transparent);
-    }
-
-    40%{
-        transform: scale(0);
-        display: none;
-        background: radial-gradient(transparent, transparent);
-    }
-
-    60%{
+    0%, 20%, 40%, 60%{
         transform: scale(0);
         display: none;
         background: radial-gradient(transparent, transparent);
